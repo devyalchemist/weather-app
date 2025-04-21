@@ -1,0 +1,328 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+	text-decoration: none;
+	list-style: none;
+	/* font-family: "Libre Baskerville", serif; */
+}
+:root {
+	/* --gray:  */
+	/* --container: rgba(225, 225, 225, 0.66); */
+	--button: rgba(67, 67, 67, 0.674);
+}
+
+section {
+	width: 100%;
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+	background-color: rgb(1, 1, 22);
+	height: 100vh;
+}
+
+#weather-app .container {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.search-bar {
+	display: flex;
+	position: relative;
+	/* width: 60%; */
+	justify-content: center;
+	/* margin: auto; */
+}
+#weather-form {
+	width: 100%;
+	padding: 10px;
+	/* display: flex;
+	justify-content: center; */
+}
+.main-con {
+	width: 60%;
+	/* margin: auto; */
+}
+.search-bar input[type="text"] {
+	flex: 1 1 100%;
+	/* max-width: 700px; */
+	/* width: 100%; */
+	border: none;
+	background-color: rgba(188, 237, 255, 0.386);
+	padding: 20px;
+	color: white;
+	outline: none;
+	/* border-radius: 30px 0 0 30px; */
+	border-radius: 30px;
+}
+.search-bar input[type="text"]::placeholder {
+	color: rgb(223, 223, 223);
+}
+/* .search-bar input[type="submit"] {
+	flex: 1 1 20%;
+} */
+.search-bar button {
+	/* flex: 1 1 20%; */
+	padding: 20px;
+	background-color: rgb(0, 140, 9);
+	color: white;
+	border-radius: 30px;
+	position: absolute;
+	right: 0px;
+	border: none;
+}
+.fa-magnifying-glass {
+	/* padding: ; */
+	padding-left: 20px;
+}
+.lang-btn {
+	display: flex;
+	width: 100%;
+	justify-content: end;
+	gap: 2rem;
+	padding: 20px 0;
+	padding: 10px;
+	margin-top: 40px;
+}
+.lang-btn button {
+	display: block;
+	padding: 5px;
+	font-size: 0.6rem;
+	background-color: var(--button);
+	color: white;
+	border: none;
+	border-radius: 10px;
+}
+.weather-result {
+	width: 80%;
+	position: relative;
+	overflow: hidden;
+	height: 500px;
+	border-radius: 20px;
+	animation: glow-pulse 1.5s infinite alternate;
+}
+@keyframes glow-pulse {
+	0% {
+		box-shadow: 0 0 10px #00ffaa;
+	}
+	100% {
+		box-shadow: 0 0 20px #00ffaa, 0 0 30px #00ffaa;
+	}
+}
+.weather-result .con {
+	padding: 20px;
+	display: grid;
+	/* grid-template: 1fr 1fr/ 1fr 3fr minmax(1fr, 150px); */
+	grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr); /* Rows */
+	grid-template-columns: minmax(120px, 1fr) 3fr minmax(120px, 1fr); /* Columns ✅ */
+	position: absolute;
+	gap: 20px;
+	top: 0;
+	width: 100%;
+	/* height: 400px;	 */
+}
+.weather-result .weather-res {
+	width: 100%;
+	object-fit: cover;
+	filter: blur(1px) saturate(50%) sepia(40%) brightness(40%);
+}
+.time-con {
+	grid-area: 1/1/2/2;
+	background-color: var(--container);
+	width: 100%;
+	height: 100%;
+	/* color: rgba(225, 225, 225, 0.66); */
+}
+.date-display {
+	grid-area: 2/1/3/2;
+	background-color: var(--container);
+}
+.description {
+	grid-area: 1/2/3/3;
+	background-color: var(--container);
+	display: flex;
+	flex-direction: column;
+}
+.weather-report {
+	grid-area: 1/3/-1/-1;
+	background-color: var(--container);
+}
+.time-display,
+.coco {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-family: monospace;
+	color: white;
+	/* background-color: black; */
+	font-size: 2rem;
+	position: relative;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+.tooltip {
+	font-size: 0.6rem;
+	font-family: montserrat;
+	/* padding: 10px 0; */
+	/* align-self: flex-start; */
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border-radius: 10px;
+
+	padding: 5px;
+	background-color: var(--button);
+}
+.tooltip:hover {
+	box-shadow: 0 0 20px #00ffaa, 0 0 30px #00ffaa;
+}
+.url-display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* padding: 20px; */
+	width: 100%;
+	height: 100%;
+	/* background-color: white; */
+}
+.empty {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+.url-display .qr-code {
+	width: 100%;
+	object-fit: cover;
+}
+.qr-con {
+	width: 100%;
+	height: 100%;
+}
+.country-ttl {
+	font-size: 4rem;
+	color: white;
+	padding: 40px 0px;
+}
+.summary {
+	background-color: rgba(255, 77, 107, 0.651);
+	padding: 20px;
+	color: white;
+}
+.descriptive {
+	padding: 40px 0;
+	/* text-align: center; */
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: aqua;
+}
+.powered {
+	position: absolute;
+	bottom: 0px;
+	color: white;
+	text-align: center;
+	font-size: 0.8rem;
+	padding: 20px;
+	margin: auto;
+}
+.weather-report {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.coco {
+	flex: 1 1 30%;
+}
+@media (max-width: 1300px) {
+	.time-display,
+	.coco {
+		font-size: 1.5rem;
+	}
+	.country-ttl {
+		font-size: 2.5rem;
+	}
+	.summary {
+		font-size: 0.8rem;
+	}
+	.descriptive {
+		font-size: 0.8rem;
+	}
+}
+@media (max-width: 1000px) {
+	.weather-result {
+		height: 420px;
+		width: 100%;
+	}
+	.main-con {
+		width: 80%;
+	}
+}
+@media (max-width: 680px) {
+	.country-ttl {
+		font-size: 1.8rem;
+	}
+	.summary {
+		padding: 10px;
+		font-size: 0.6rem;
+	}
+	.weather-result .con {
+		gap: 10px;
+		grid-template-columns: minmax(100px, 1fr) 3fr minmax(100px, 1fr);
+		grid-template-rows: minmax(160px, 1fr) minmax(160px, 1fr);
+		padding: 10px;
+	}
+	.weather-res {
+		height: 100%;
+	}
+	.time-display,
+	.coco {
+		font-size: 1.2rem;
+	}
+	.main-con {
+		width: 100%;
+	}
+	.url-display {
+		padding: 0px;
+	}
+}
+@media (max-width: 560px) {
+	.lang-btn {
+		margin-top: 20px;
+	}
+	.time-display,
+	.coco {
+		padding: 10px;
+	}
+	.tooltip {
+		top: 10px;
+		left: 10px;
+	}
+	.search-bar button,
+	.search-bar input[type="text"] {
+		padding: 15px;
+		font-size: 0.6rem; /*for styling two elements where one is like full width and the other is over the its pair due to a position absolute set, its good to style them together expecially as the flex option is not made available*/
+	}
+	.time-display,
+	.coco {
+		font-size: 1rem;
+	}
+	.tooltip {
+		font-size: 0.4rem;
+	}
+	.weather-result .con {
+		grid-template-columns: minmax(80px, 1fr) 3fr minmax(80px, 1fr);
+	}
+	.descriptive {
+		font-size: 0.6rem;
+		margin-top: 40px;
+	}
+	.country-ttl {
+		font-size: 1.2rem;
+	}
+	.powered {
+		font-size: 0.6rem;
+	}
+}
