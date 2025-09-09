@@ -1,5 +1,5 @@
 let weatherMusic = new Audio("sounds/weather-tone.mp3");
-weatherMusic.loop = true;
+weatherMusic.loop = false;
 weatherMusic.volume = 0.5;
 // let musicBtn = document.getElementById("music-btn");
 // document.addEventListener("DOMContentLoaded", () => {
